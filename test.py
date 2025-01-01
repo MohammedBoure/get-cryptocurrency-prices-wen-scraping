@@ -1,13 +1,7 @@
 import re
 
-def GetIndexesInSTR(htmldata,value='"price":'):
-    #Search all indexes containing value
+def GetIndexesInSTR(htmldata, value='"symbol":'):
     return [match.start() for match in re.finditer(value, htmldata)]
-
-def getprice(hrmlfile:str,index:int):
-    price = hrmlfile[index:index+30].split(":")[1]
-    price = price.split(",")[0]
-    return price
 
 def getsymbol(hrmlfile: str, indexprice: int):
     if len(hrmlfile) > 200:
@@ -23,13 +17,7 @@ def getsymbol(hrmlfile: str, indexprice: int):
         return name[start_index:start_index + end_index]
     else:
         return None
-    
-def GetCurrencyPrices(hrmlfile:str,indexs:tuple):
-    prices = {}
-    for index in indexs:
-      price = getprice(hrmlfile,index) 
-      name = getsymbol(hrmlfile,index) 
-      if name and price:
-          prices.update({name:float(price)})
-    
-    return prices
+
+data = '"id":33841,"dataType":2,"name":"EYWA","symbol":"EYWA","slug":"eywa","rank":3008,"status":"active","marketCap":0,"selfReportedMarketCap":6926228.730695369,"priceChange":{'
+
+print(getsymbol(data, len(data) - 1))
