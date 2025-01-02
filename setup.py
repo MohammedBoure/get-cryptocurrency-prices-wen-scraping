@@ -1,6 +1,5 @@
 from setuptools import setup, find_packages
 
-# محاولة فتح README.md بأمان
 long_description = ""
 try:
     with open("README.md", "r", encoding="utf-8") as f:
