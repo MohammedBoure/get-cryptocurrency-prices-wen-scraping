@@ -1,5 +1,5 @@
 import re
-
+#test 1
 def GetIndexesInSTR(htmldata, value='"symbol":'):
     return [match.start() for match in re.finditer(value, htmldata)]
 
@@ -21,3 +21,11 @@ def getsymbol(hrmlfile: str, indexprice: int):
 data = '"id":33841,"dataType":2,"name":"EYWA","symbol":"EYWA","slug":"eywa","rank":3008,"status":"active","marketCap":0,"selfReportedMarketCap":6926228.730695369,"priceChange":{'
 
 print(getsymbol(data, len(data) - 1))
+
+
+#test 2
+import PriceFlow
+
+print(f"\nall data ==> \n {PriceFlow.fetch_rates()}\n\n")
+
+print(f"BTC price = {PriceFlow.fetch_rates('BTC')}")
