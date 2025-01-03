@@ -1,3 +1,5 @@
+The library is currently incomplete. The website relies on JavaScript to dynamically load data, and the library does not support accessing the updated data through JavaScript rendering.
+
 # Cryptocurrency Price Fetcher
 
 This script is designed to fetch the current prices of cryptocurrencies from [CoinMarketCap](https://coinmarketcap.com).
