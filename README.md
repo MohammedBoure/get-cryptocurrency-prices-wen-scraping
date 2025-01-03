@@ -27,6 +27,7 @@ The library provides a simple API to fetch cryptocurrency prices. The primary fu
 You can fetch the prices of all available cryptocurrencies using the following code:
 
 ```python
+import PriceFlow
 PriceFlow.fetch_rates("ALL")
 ```
 
